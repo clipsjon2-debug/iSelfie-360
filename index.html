@@ -21,11 +21,12 @@
     
     <style>
         :root {
-            --cor-primaria: #667eea;
-            --cor-secundaria: #764ba2;
+            --cor-primaria: #FFA500;
+            --cor-secundaria: #FFD700;
+            --cor-preto: #1a1a1a;
             --cor-branco: #ffffff;
             --cor-texto: #333333;
-            --gradiente-principal: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradiente-principal: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
         }
 
         * {
@@ -46,10 +47,10 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.95);
+            background: var(--cor-preto);
             padding: 15px 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(255,165,0,0.3);
         }
 
         .container {
@@ -144,19 +145,22 @@
             margin-bottom: 20px;
             font-weight: 800;
             line-height: 1.2;
+            color: var(--cor-preto);
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.3);
         }
 
         .hero-content p {
             font-size: 1.4rem;
             margin-bottom: 30px;
             opacity: 0.95;
+            color: var(--cor-preto);
         }
 
         .cta-button {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--cor-branco);
+            background: var(--cor-preto);
             color: var(--cor-primaria);
             padding: 18px 40px;
             border-radius: 50px;
@@ -164,12 +168,14 @@
             font-weight: 700;
             font-size: 1.1rem;
             transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            background: var(--cor-preto);
+            color: var(--cor-secundaria);
         }
 
         /* Sections */
@@ -203,11 +209,13 @@
             transition: all 0.3s;
             text-decoration: none;
             color: inherit;
+            border: 2px solid transparent;
         }
 
         .equipment-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102,126,234,0.25);
+            box-shadow: 0 20px 40px rgba(255,165,0,0.3);
+            border-color: var(--cor-primaria);
         }
 
         .equipment-image {
@@ -223,6 +231,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .equipment-image i {
+            font-size: 80px;
+            color: var(--cor-preto);
         }
 
         .equipment-content {
@@ -267,8 +280,9 @@
             width: 100%;
             height: 350px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(255,165,0,0.2);
             display: block;
+            border: 3px solid var(--cor-primaria);
         }
 
         /* Depoimentos */
@@ -285,10 +299,12 @@
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            border: 2px solid transparent;
         }
 
         .testimonial:hover {
             transform: translateY(-5px);
+            border-color: var(--cor-primaria);
         }
 
         .testimonial-photo {
@@ -305,7 +321,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--cor-preto);
             font-size: 2rem;
             border: 4px solid var(--cor-primaria);
         }
@@ -331,14 +347,14 @@
             background: white;
             border-radius: 15px;
             margin-bottom: 20px;
-            box-shadow: 0 5px 20px rgba(102,93,150,0.1);
+            box-shadow: 0 5px 20px rgba(255,165,0,0.1);
             overflow: hidden;
-            border: 1px solid rgba(102,93,150,0.1);
+            border: 2px solid rgba(255,165,0,0.2);
         }
 
         .faq-question {
             padding: 25px 30px;
-            background: linear-gradient(135deg, rgba(102,126,234,0.05) 0%, rgba(118,75,162,0.05) 100%);
+            background: linear-gradient(135deg, rgba(255,165,0,0.05) 0%, rgba(255,215,0,0.05) 100%);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -414,7 +430,7 @@
         }
 
         .contact-icon i {
-            color: white;
+            color: var(--cor-preto);
             font-size: 1.2rem;
         }
 
@@ -468,7 +484,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--cor-primaria);
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.1);
         }
 
         .form-group textarea {
@@ -478,7 +494,7 @@
 
         .submit-btn {
             background: var(--gradiente-principal);
-            color: white;
+            color: var(--cor-preto);
             padding: 15px 30px;
             border: none;
             border-radius: 8px;
@@ -495,7 +511,7 @@
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
         }
 
         /* WhatsApp Float */
@@ -525,7 +541,7 @@
 
         /* Footer */
         .footer {
-            background: #1a1a1a;
+            background: var(--cor-preto);
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -551,7 +567,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--cor-preto);
             text-decoration: none;
             transition: transform 0.3s;
         }
@@ -569,7 +585,7 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(0,0,0,0.95);
+                background: var(--cor-preto);
                 padding: 20px;
             }
 
@@ -631,7 +647,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Transforme seu Evento em Experiência 360°</h1>
-                <p>Plataforma 360°, Totem LED e Túnel Infinity para casamentos, festas e eventos corporativos em Foz do Iguaçu</p>
+                <p>Plataforma 360°, Totem LED e Túnel Infinity para casamentos, festas e eventos corporativos em Foz do Iguaçu e região</p>
                 <a href="https://api.whatsapp.com/send/?phone=554599496623&text=Olá! Gostaria de solicitar um orçamento para meu evento." class="cta-button">
                     <i class="fab fa-whatsapp"></i> Solicitar Orçamento
                 </a>
@@ -685,7 +701,7 @@
             <h2>Sobre Nós</h2>
             <div class="about-grid">
                 <div class="about-content">
-                    <p>Somos uma empresa especializada em transformar eventos em experiências únicas e inesquecíveis por meio da tecnologia. Com atuação em Foz do Iguaçue região, atendemos casamentos, festas de 15 anos, aniversários e eventos corporativos</p>
+                    <p>Somos uma empresa especializada em transformar eventos em experiências únicas e inesquecíveis por meio da tecnologia. Com atuação em Foz do Iguaçu e região, atendemos casamentos, festas de 15 anos, aniversários e eventos corporativos</p>
                     <p style="margin-top: 15px;">Ao longo da nossa trajetória, tivemos a satisfação de receber reconhecimento pelo nosso trabalho, reflexo do comprometimento, dedicação e cuidado presentes em cada evento que realizamos. Esse prêmio representa a confiança dos nossos clientes e parceiros ao longo desses anos.</p>
                     <p style="margin-top: 15px;">Seguimos com o mesmo propósito que nos trouxe até aqui: oferecer experiências inovadoras, atendimento de excelência e memórias que ficarão marcadas para sempre.</p>
                 </div>
@@ -695,8 +711,6 @@
             </div>
         </div>
     </section>
-
-
 
     <!-- FAQ -->
     <section class="section" id="faq" style="background: #f8f9fa;">
@@ -900,12 +914,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
