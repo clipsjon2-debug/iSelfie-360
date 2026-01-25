@@ -257,12 +257,15 @@
 
         .about-image {
             text-align: center;
+            width: 100%;
         }
 
         .about-image img {
-            max-width: 100%;
+            width: 100%;
+            height: auto;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: block;
         }
 
         /* Depoimentos */
@@ -600,7 +603,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="Logo.png" alt="iSelfie 360 Logo">
+                    <img src="logo.png" alt="iSelfie 360 Logo">
                 </div>
                 <nav>
                     <ul class="nav-menu" id="navMenu">
@@ -686,7 +689,6 @@
                 <div class="about-image">
     			<img src="Sobre.jpg" alt="iSelfie 360 em ação">
 		</div>
-
             </div>
         </div>
     </section>
@@ -793,74 +795,50 @@
         // PROTEÇÃO DO CÓDIGO FONTE
         // ====================================
         
-        // Desabilitar clique direito
+        // Desabilitar clique direito (sem alerta)
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
-            alert('Clique direito desabilitado!');
             return false;
         });
 
-        // Bloquear teclas de atalho
+        // Bloquear teclas de atalho (sem alertas)
         document.addEventListener('keydown', function(e) {
             // F12
             if (e.keyCode === 123) {
                 e.preventDefault();
-                alert('DevTools desabilitado!');
                 return false;
             }
             
             // Ctrl+Shift+I (Inspecionar)
             if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
                 e.preventDefault();
-                alert('DevTools desabilitado!');
                 return false;
             }
             
             // Ctrl+Shift+J (Console)
             if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
                 e.preventDefault();
-                alert('Console desabilitado!');
                 return false;
             }
             
             // Ctrl+U (Ver código-fonte)
             if (e.ctrlKey && e.keyCode === 85) {
                 e.preventDefault();
-                alert('Visualização de código desabilitada!');
                 return false;
             }
             
             // Ctrl+S (Salvar página)
             if (e.ctrlKey && e.keyCode === 83) {
                 e.preventDefault();
-                alert('Salvar página desabilitado!');
                 return false;
             }
             
             // Ctrl+Shift+C (Inspecionar elemento)
             if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
                 e.preventDefault();
-                alert('Inspeção desabilitada!');
                 return false;
             }
         });
-
-        // Detectar DevTools aberto (verificação de tamanho)
-        (function() {
-            const detectDevTools = () => {
-                const threshold = 160;
-                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-                
-                if (widthThreshold || heightThreshold) {
-                    alert('DevTools detectado! Por favor, feche para continuar.');
-                    // Opcional: redirecionar para outra página
-                    // window.location.href = 'about:blank';
-                }
-            };
-            
-            setInterval(detectDevTools, 1000);
-        })();
 
         // Desabilitar seleção de texto
         document.addEventListener('selectstart', function(e) {
@@ -925,4 +903,3 @@
     </script>
 </body>
 </html>
-
