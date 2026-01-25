@@ -600,7 +600,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="Logo.png" alt="iSelfie 360 Logo">
+                    <img src="logo.png" alt="iSelfie 360 Logo">
                 </div>
                 <nav>
                     <ul class="nav-menu" id="navMenu">
@@ -684,8 +684,9 @@
                     <p style="margin-top: 20px;">Nossa missão é transformar celebrações em momentos extraordinários que ficarão eternizados nas memórias de todos os participantes.</p>
                 </div>
                 <div class="about-image">
-                    <img src="Sobre.jpg">
-                
+                    <div style="width: 100%; height: 400px; background: var(--gradiente-principal); border-radius: 15px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-video" style="font-size: 120px; color: white; opacity: 0.8;"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -706,7 +707,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Nossos pacotes começam a partir de 2 horas.</p>
+                        <p>Nossos pacotes começam a partir de 3 horas, podendo ser estendidos conforme a necessidade do seu evento.</p>
                     </div>
                 </div>
 
@@ -716,7 +717,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sim! Nossa equipe permanece no local durante todo o período contratado, prestando suporte aos convidados.</p>
+                        <p>Sim! Nossa equipe permanece durante todo o período contratado para auxiliar os convidados e garantir o perfeito funcionamento dos equipamentos.</p>
                     </div>
                 </div>
 
@@ -726,7 +727,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>.</p>
+                        <p>Todos os vídeos e fotos são enviados automaticamente para o celular dos participantes via QR Code ou link compartilhável.</p>
                     </div>
                 </div>
 
@@ -736,7 +737,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>.</p>
+                        <p>Para eventos em Foz do Iguaçu e região próxima, não cobramos taxa de deslocamento. Para outras localidades, consulte nossa equipe.</p>
                     </div>
                 </div>
 
@@ -746,7 +747,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>.</p>
+                        <p>Sim! Personalizamos todas as molduras de fotos e vídeos com a identidade visual do seu evento sem custo adicional.</p>
                     </div>
                 </div>
             </div>
@@ -772,10 +773,10 @@
         <div class="container">
             <h3 style="color: var(--cor-primaria); margin-bottom: 20px;">Siga-nos nas Redes Sociais</h3>
             <div class="social-media">
-                <a href="https://www.instagram.com/iselfie360.foz/" target="_blank" class="social-link">
+                <a href="https://instagram.com/iselfie360" target="_blank" class="social-link">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=100086750100025" target="_blank" class="social-link">
+                <a href="https://facebook.com/iselfie360" target="_blank" class="social-link">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
@@ -789,6 +790,95 @@
     </a>
 
     <script>
+        // ====================================
+        // PROTEÇÃO DO CÓDIGO FONTE
+        // ====================================
+        
+        // Desabilitar clique direito
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Clique direito desabilitado!');
+            return false;
+        });
+
+        // Bloquear teclas de atalho
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                alert('DevTools desabilitado!');
+                return false;
+            }
+            
+            // Ctrl+Shift+I (Inspecionar)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                e.preventDefault();
+                alert('DevTools desabilitado!');
+                return false;
+            }
+            
+            // Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                e.preventDefault();
+                alert('Console desabilitado!');
+                return false;
+            }
+            
+            // Ctrl+U (Ver código-fonte)
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                alert('Visualização de código desabilitada!');
+                return false;
+            }
+            
+            // Ctrl+S (Salvar página)
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                alert('Salvar página desabilitado!');
+                return false;
+            }
+            
+            // Ctrl+Shift+C (Inspecionar elemento)
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+                e.preventDefault();
+                alert('Inspeção desabilitada!');
+                return false;
+            }
+        });
+
+        // Detectar DevTools aberto (verificação de tamanho)
+        (function() {
+            const detectDevTools = () => {
+                const threshold = 160;
+                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                
+                if (widthThreshold || heightThreshold) {
+                    alert('DevTools detectado! Por favor, feche para continuar.');
+                    // Opcional: redirecionar para outra página
+                    // window.location.href = 'about:blank';
+                }
+            };
+            
+            setInterval(detectDevTools, 1000);
+        })();
+
+        // Desabilitar seleção de texto
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Desabilitar arrastar texto/imagens
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // ====================================
+        // FUNCIONALIDADES DO SITE
+        // ====================================
+
         // Menu hambúrguer
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
@@ -835,5 +925,4 @@
         });
     </script>
 </body>
-
 </html>
