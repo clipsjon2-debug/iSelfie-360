@@ -840,7 +840,11 @@
             }
         });
 
-    
+          // Desabilitar arrastar texto/imagens
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
 
         // ====================================
         // FUNCIONALIDADES DO SITE
@@ -893,5 +897,6 @@
     </script>
 </body>
 </html>
+
 
 
