@@ -285,58 +285,6 @@
             border: 3px solid var(--cor-primaria);
         }
 
-        /* Depoimentos */
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .testimonial:hover {
-            transform: translateY(-5px);
-            border-color: var(--cor-primaria);
-        }
-
-        .testimonial-photo {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .client-photo-placeholder {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--gradiente-principal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cor-preto);
-            font-size: 2rem;
-            border: 4px solid var(--cor-primaria);
-        }
-
-        .testimonial-content p {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .client-name {
-            font-weight: 600;
-            color: var(--cor-primaria);
-        }
-
         /* FAQ */
         .faq-container {
             max-width: 800px;
@@ -388,130 +336,26 @@
             max-height: 300px;
         }
 
-        /* Contato */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 50px;
-            max-width: 1200px;
+        /* Assistente de Orçamento */
+        .orcamento-section {
+            background: #f8f9fa;
+            padding: 80px 20px;
+        }
+
+        .orcamento-container {
+            max-width: 600px;
             margin: 50px auto 0;
-        }
-
-        .contact-info {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: fit-content;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .contact-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--cor-primaria);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-        }
-
-        .contact-icon i {
-            color: var(--cor-preto);
-            font-size: 1.2rem;
-        }
-
-        .contact-details h3 {
-            color: var(--cor-primaria);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .contact-details p {
-            color: #5a5f65;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--cor-primaria);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .form-group input,
-        .form-group textarea {
+        .orcamento-iframe {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--cor-primaria);
-            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background: var(--gradiente-principal);
-            color: var(--cor-preto);
-            padding: 15px 30px;
+            height: 700px;
             border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 1.1rem;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+            display: block;
         }
 
         /* WhatsApp Float */
@@ -605,13 +449,12 @@
                 font-size: 1.1rem;
             }
 
-            .about-grid,
-            .contact-container {
+            .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
+            .orcamento-iframe {
+                height: 600px;
             }
         }
     </style>
@@ -631,6 +474,7 @@
                         <li><a href="#sobre">Sobre</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contato">Contato</a></li>
+                        <li><a href="Assistente.html" style="background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria)); padding: 8px 20px; border-radius: 50px;">💰 Orçamento Online</a></li>
                     </ul>
                 </nav>
                 <div class="hamburger" id="hamburger">
@@ -648,8 +492,8 @@
             <div class="hero-content">
                 <h1>Transforme seu Evento em Experiência 360°</h1>
                 <p>Plataforma 360°, Totem LED e Túnel Infinity para casamentos, festas e eventos corporativos em Foz do Iguaçu e região</p>
-                <a href="https://api.whatsapp.com/send/?phone=554599496623&text=Olá! Gostaria de solicitar um orçamento para meu evento." class="cta-button">
-                    <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+                <a href="Assistente.html" class="cta-button">
+                    <i class="fas fa-calculator"></i> Solicitar Orçamento
                 </a>
             </div>
         </div>
@@ -702,12 +546,12 @@
             <div class="about-grid">
                 <div class="about-content">
                     <p>Somos uma empresa especializada em transformar eventos em experiências únicas e inesquecíveis por meio da tecnologia. Com atuação em Foz do Iguaçu e região, atendemos diversos tipos de eventos.</p>
-                    <p style="margin-top: 15px;">Ao longo da nossa trajetória, tivemos a satisfação de receber reconhecimento pelo nosso trabalho, reflexo do comprometimento, dedicação e cuidado presentes em cada evento que realizamos. Esse prêmio representa a confiança dos nossos clientes e parceiros ao longo desses anos.</p>
+                    <p style="margin-top: 15px;">Ao longo da nossa trajetória, tivemos a satisfação de receber reconhecimento pelo nosso trabalho, reflexo do comprometimento, dedicação e cuidado presentes em cada evento que realizamos.</p>
                     <p style="margin-top: 15px;">Seguimos com o mesmo propósito que nos trouxe até aqui: oferecer experiências inovadoras, atendimento de excelência e memórias que ficarão marcadas para sempre.</p>
                 </div>
                 <div class="about-image">
-    			<img src="Sobre.png" alt="iSelfie 360 em ação">
-		</div>
+    			    <img src="Sobre.png" alt="iSelfie 360 em ação">
+		        </div>
             </div>
         </div>
     </section>
@@ -817,7 +661,7 @@
             e.preventDefault();
             return false;
         });
-
+        
         // Bloquear teclas de atalho (sem alertas)
         document.addEventListener('keydown', function(e) {
             // F12
@@ -856,8 +700,8 @@
                 return false;
             }
         });
-
-          // Desabilitar arrastar texto/imagens
+        
+        // Desabilitar arrastar texto/imagens
         document.addEventListener('dragstart', function(e) {
             e.preventDefault();
             return false;
@@ -914,5 +758,3 @@
     </script>
 </body>
 </html>
-
-
